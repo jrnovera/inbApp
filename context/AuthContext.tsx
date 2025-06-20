@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { router } from 'expo-router';
+import { auth } from '@/firebaseConfig';
 
 type AuthContextType = {
   user: User | null;
@@ -19,10 +20,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const auth = getAuth();
+    // Use the pre-initialized auth instance from firebaseConfig
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
+      console.log('Auth state changed:', user ? 'User logged in' : 'No user');
     });
 
     // Cleanup subscription on unmount

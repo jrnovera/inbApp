@@ -34,6 +34,20 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="upcommingTransaction"
+        options={{
+          title: 'Upcoming Transactions',
+          tabBarIcon: ({ color, size }) => <Ionicons name="calendar" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="addTransactionManually"
+        options={{
+          title: 'Add Transaction',
+          tabBarIcon: ({ color, size }) => <Ionicons name="add" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',

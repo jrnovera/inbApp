@@ -108,16 +108,15 @@ const SettingsScreen: React.FC = () => {
           <Text style={styles.sectionTitle}>Preferences</Text>
         </View>
         {renderSwitchItem('Notifications', isNotificationsEnabled, toggleNotifications, 'notifications-outline')}
-        {renderSwitchItem('Transaction Alerts', isTransactionAlertsEnabled, toggleTransactionAlerts, 'alert-circle-outline')}
-        {renderSwitchItem('Weekly Reports', isWeeklyReportsEnabled, toggleWeeklyReports, 'document-text-outline')}
+      
         {renderSwitchItem('Dark Mode', isDarkModeEnabled, toggleDarkMode, 'moon-outline')}
 
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Account & Security</Text>
         </View>
         {renderLinkItem('Account Information', handleAccountPress, 'person-outline')}
-        {renderLinkItem('Payment Methods', handlePaymentMethodPress, 'card-outline')}
-        {renderSwitchItem('Biometric Authentication', isBiometricEnabled, toggleBiometric, 'finger-print')}
+      
+      
         {renderLinkItem('Change Password', handleAccountPress, 'lock-closed-outline')}
 
         <View style={styles.sectionHeader}>

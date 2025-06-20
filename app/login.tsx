@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, Auth as FirebaseAuth } from 'firebase/auth';
 import { auth } from '@/firebaseConfig';
 
 export default function Login() {
@@ -36,7 +36,8 @@ export default function Login() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Sign In</Text>
+      <Text style={styles.title}>Inb App</Text>
+       
         
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
         
